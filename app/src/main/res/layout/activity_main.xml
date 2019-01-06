@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:foregroundGravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="0dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tl"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="1 TRY"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089"
+        tools:text="1 TRY" />
+
+    <Button
+        android:id="@+id/guncelle"
+        android:layout_width="144dp"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="GÜNCELLE"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <TextView
+        android:id="@+id/dolar"
+        android:layout_width="284dp"
+        android:layout_height="76dp"
+        android:gravity="left|center"
+        android:padding="5dp"
+        android:text="Dolar = "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <TextView
+        android:id="@+id/euro"
+        android:layout_width="286dp"
+        android:layout_height="67dp"
+        android:gravity="left|center"
+        android:padding="5dp"
+        android:text="Euro = "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <TextView
+        android:id="@+id/pound"
+        android:layout_width="284dp"
+        android:layout_height="74dp"
+        android:gravity="left|center"
+        android:padding="5dp"
+        android:text="Pound = "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="326dp" />
+
+    <TextView
+        android:id="@+id/yen"
+        android:layout_width="285dp"
+        android:layout_height="64dp"
+        android:gravity="left|center"
+        android:padding="5dp"
+        android:text="Yen = "
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="381dp" />
+
+
+</LinearLayout>
