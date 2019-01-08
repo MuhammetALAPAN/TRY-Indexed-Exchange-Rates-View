@@ -27,27 +27,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button b = (Button) findViewById(R.id.guncelle);
-        tv1 = (TextView) findViewById(R.id.dolar);
-        tv2 = (TextView) findViewById(R.id.euro);
-        tv3 = (TextView) findViewById(R.id.pound);
-        tv4 = (TextView) findViewById(R.id.yen);
+        Button b = findViewById(R.id.guncelle);
+        tv1 = findViewById(R.id.dolar);
+        tv2 = findViewById(R.id.euro);
+        tv3 = findViewById(R.id.pound);
+        tv4 = findViewById(R.id.yen);
 
 
-                b.setOnClickListener(new View.OnClickListener() {
+        b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ArkaPlan().execute("https://api.exchangeratesapi.io/latest?base=TRY");
+                new BackGround().execute("https://api.exchangeratesapi.io/latest?base=TRY");
             }
         });
     }
 
-    class ArkaPlan extends AsyncTask<String, String, String> {
+    class BackGround extends AsyncTask<String, String, String> {
 
         protected String doInBackground(String... params) {
             params[0] = "https://api.exchangeratesapi.io/latest?base=TRY";
-            HttpURLConnection connection = null;
-            BufferedReader br = null;
+            HttpURLConnection connection;
+            BufferedReader br;
 
             try {
                 URL url = new URL(params[0]);
@@ -60,24 +60,19 @@ public class MainActivity extends AppCompatActivity {
                 String satir;
                 while ((satir = br.readLine()) != null) {
                     dosya += satir;
-
                 }
                 br.close();
                 return dosya;
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
             return "hata";
         }
         @Override
         protected void onPostExecute(String s) {
             try {
-                tv1.setText("ahahhaha");
                 JSONObject jsonObject = new JSONObject(s);
                 JSONObject jo = jsonObject.getJSONObject("rates");
-                //JSONObject jo = new JSONObject(s);
                 tv1.setText("Dolar = " + jo.getString("USD"));
                 tv2.setText("Euro = " + jo.getString("EUR"));
                 tv3.setText("Pound = " + jo.getString("GBP"));
